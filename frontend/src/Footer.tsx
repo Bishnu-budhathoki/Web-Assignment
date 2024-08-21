@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css';
-import {Link} from "react-router-dom";
 import face from "./assets/facebooklogo.png";
 import insta from "./assets/instagramlogo.png";
 import whats from "./assets/whatsapplogo.png";
@@ -20,19 +19,8 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="footer-section-main contact-main">
                     <h3>Contact Us</h3>
-                    <p><img src={phn} alt="Phone" /> Emergency Contact.No.9842372593</p>
-                    <p><img src={mail} alt="Email" /> vehiclerental@gmail.com</p>
-
-                </div>
-                <div className="footer-section-main company-main">
-                    <h3>Company</h3>
-
-
-                    <Link to="contract"><p>Terms & Conditions</p></Link>
-                    <Link to ="pri"><p>Privacy Policy</p></Link>
-                    <Link to="/"><p>Home Page</p></Link>
-                    <Link to="LateReturnPolicy "><p>LateReturnPolicy</p></Link>
-                    <Link to="CancellationPolicy "><p>CancellationPolicy</p></Link>
+                    <p><img src={phn} alt="Phone" /> Emergency Contact.No.982000000</p>
+                    <p><img src={mail} alt="Email" /> carrental123@gmail.com</p>
 
                 </div>
             </div>

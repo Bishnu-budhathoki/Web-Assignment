@@ -1,12 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
-import TermsAndConditions from './TermsAndConditions';
 import Footer from './Footer';
-import PrivacyPolicy from './PrivacyPolicy';
 import LoginSignup from './LoginSignup';
-import LateReturnPolicy from "./LateReturnPolicy";
-import CancellationPolicy from './CancellationPolicy';
 
 
 import Sidebar from './admin/Sidebar';
@@ -39,10 +35,6 @@ const MainLayout: React.FC = () => (
         <Routes>
 
             <Route path="/" element={<HomePage />} />
-            <Route path="/contract" element={<TermsAndConditions />} />
-            <Route path="/pri" element={<PrivacyPolicy/>} />
-            <Route path="/LateReturnPolicy" element={<LateReturnPolicy/>} />
-            <Route path="/CancellationPolicy" element={<CancellationPolicy/>} />
             <Route path="/car" element={<CarAll/>} />
 
         </Routes>

@@ -6,8 +6,8 @@ interface Booking {
     carId: string;
     userId: string;
     totalAmount: string;
-    rentalStartdateTime: string;
-    rentalEnddateTime: string;
+    rentalStartDateTime: string;  // Corrected casing
+    rentalEndDateTime: string;    // Corrected casing
 }
 
 const CarBookingList: React.FC = () => {
@@ -20,13 +20,12 @@ const CarBookingList: React.FC = () => {
 
     const fetchBookings = async () => {
         try {
-            const response = await fetch('http://localhost:8080/carbooking/all'); // Ensure the URL is correct
+            const response = await fetch('http://localhost:8080/carbooking/all');
 
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
 
-            // Check if the response is HTML
             const contentType = response.headers.get('Content-Type');
             if (contentType && contentType.includes('text/html')) {
                 const text = await response.text();
@@ -37,13 +36,13 @@ const CarBookingList: React.FC = () => {
             setBookings(data);
         } catch (error) {
             console.error('Error fetching bookings:', error);
-            setError(`Failed to fetch bookings. Error: ${error.message}`);
+            setError(`Failed to fetch bookings. Error: ${error instanceof Error ? error.message : 'Unknown error'}`);
         }
     };
 
     const handleDelete = async (id: number) => {
         try {
-            const response = await fetch(`http://localhost:8080/carbooking/all/${id}`, {
+            const response = await fetch(`http://localhost:8080/carbooking/${id}`, { // Corrected URL
                 method: 'DELETE',
             });
 
@@ -79,8 +78,8 @@ const CarBookingList: React.FC = () => {
                         <td>{booking.carId}</td>
                         <td>{booking.userId}</td>
                         <td>{booking.totalAmount}</td>
-                        <td>{booking.rentalStartdateTime}</td>
-                        <td>{booking.rentalEnddateTime}</td>
+                        <td>{booking.rentalStartDateTime}</td>  {/* Corrected casing */}
+                        <td>{booking.rentalEndDateTime}</td>    {/* Corrected casing */}
                         <td>
                             <button
                                 className="delete-button"

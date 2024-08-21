@@ -1,4 +1,3 @@
-import logo from "./assets/Logo.png";
 import './Navbar.css'
 import {Link, useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from "react";
@@ -29,11 +28,8 @@ const Navbar: React.FC = () => {
                         <Link to='/'  className="home-nav-link">Home Page</Link>
                     </li>
                     <li>
-                        <a href="#" className="home-nav-link">Rent Vehicles</a>
-                        <ul className="dropdown">
-                            <li><Link to='/car' className="home-nav-link">Car Rental</Link></li>
+                        <li><Link to='/car' className="home-nav-link">Car Rental</Link></li>
 
-                        </ul>
                     </li>
 
                 </ul>
